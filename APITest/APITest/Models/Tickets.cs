@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using APITest.Models;
+
+
 namespace APITest.Models
 {
     public class Ticket
@@ -59,7 +62,7 @@ namespace APITest.Models
 
         public class TicketList
         {
-            public List<Ticket> data { get; set; }
+            public List<Tickets> data { get; set; }
         }
     }
 }
