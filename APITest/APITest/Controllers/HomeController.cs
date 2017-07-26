@@ -82,11 +82,17 @@ namespace APITest.Controllers
 
 
         }
+        public ActionResult TicketCreator()
+        {
 
-        public ActionResult postTicket()
+            return View();
+
+        }
+        public ActionResult PostTicket()
         {
             #region Post Ticket
             var client = new RestClient("https://desk.zoho.com");
+
             var postRequest = new RestRequest("/api/v1/tickets", Method.POST);
             postRequest.RequestFormat = DataFormat.Json;
 
@@ -105,7 +111,7 @@ namespace APITest.Controllers
             toSend.priority = "High";
             toSend.classification = "Classification";
             toSend.assigneeId = "186361000000070005";
-            toSend.phone = "072 760 7234";
+            toSend.phone = "079 774 6267";
             toSend.category = "Category";
             toSend.email = "arad18@student.monash.edu";
             toSend.status = "Open";
@@ -113,7 +119,9 @@ namespace APITest.Controllers
             postRequest.AddJsonBody(toSend);
             var postResponse = client.Execute<Ticket>(postRequest);
             Ticket t = postResponse.Data;
-            return View();
+
+            var stringResponse = "ID: " + t.id + "\n" + "Contact ID: " + t.contactId + "\n" + "Ticket Number: " + t.ticketNumber + "\n" + "Subject: " + t.subject + "\n" + "Description: " + t.description + "\n" + "Email: " + t.email + "\n" + "Priority: " + t.priority + "\n" + "Channel: " + t.channel + "\n" + "Status: " + t.status;
+            return Content(stringResponse, "application/json");
             #endregion
         }
     }
