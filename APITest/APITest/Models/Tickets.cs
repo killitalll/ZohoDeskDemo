@@ -7,8 +7,8 @@ using APITest.Models;
 
 namespace APITest.Models
 {
-    public class Ticket
-    {
+    
+    
         public class Account
         {
             public string accountName { get; set; }
@@ -27,7 +27,7 @@ namespace APITest.Models
             public string id { get; set; }
         }
 
-        public class Tickets
+        public class Ticket
         {
             public string modifiedTime { get; set; }
             public string ticketNumber { get; set; }
@@ -62,7 +62,6 @@ namespace APITest.Models
 
         public class TicketList
         {
-            public List<Tickets> data { get; set; }
+            public List<Ticket> data { get; set; }
         }
-    }
 }

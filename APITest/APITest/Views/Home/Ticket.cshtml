@@ -1,8 +1,10 @@
-﻿
+﻿@model APITest.Models.Ticket
+
 @{
-    ViewBag.Title = "Ticket";
+    ViewBag.Title = "TicketCreator";
 }
 
-<h2>Ticket</h2>
-<h3>@ViewBag.Message</h3>
+<h2>Create Tickets in Zoho Desk, using this Button</h2>
+
+<input type="button" id="PostTicket" value="POST A TICKET!" onclick="location.href='@Url.Action("postTicket", "Ticket")'" />
 
