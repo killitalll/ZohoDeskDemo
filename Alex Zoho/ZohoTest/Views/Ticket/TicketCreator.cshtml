@@ -1,0 +1,9 @@
+﻿@model ZohoTest.Models.Ticket
+
+
+@{
+    ViewBag.Title = "TicketCreator";
+}
+
+<input type="button" id="PostTicket" value="POST A TICKET!" onclick="location.href='@Url.Action("PostTicket", "Ticket")'" />
+

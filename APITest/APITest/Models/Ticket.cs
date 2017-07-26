@@ -26,7 +26,7 @@ namespace APITest.Models
             public string accountId { get; set; }
             public string id { get; set; }
         }
-
+        
         public class Ticket
         {
             public string modifiedTime { get; set; }

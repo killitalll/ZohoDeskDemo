@@ -17,6 +17,7 @@ namespace APITest.Controllers
         }
         public ActionResult Ticket()
         {
+            /*
             ViewBag.Title = "Get Ticket";
 
             #region Get Tickets
@@ -56,11 +57,11 @@ namespace APITest.Controllers
             System.Diagnostics.Debug.WriteLine(Subject);
 
             var thing = new Account();
-           // ViewBag.Message = thing.interact;
+            // ViewBag.Message = thing.interact;
             #endregion
 
 
-            /*
+            
             #region Create Account
             var accountRequest = new RestRequest("/api/v1/accounts", Method.POST);
             accountRequest.AddHeader("orgId", orgId);
@@ -71,13 +72,8 @@ namespace APITest.Controllers
             var accountResponse = client.Execute<Account>(accountRequest);
             account = accountResponse.Data;
             #endregion
-
-            
             */
             return View();
-
-
-
         }
 
 
@@ -110,7 +106,7 @@ namespace APITest.Controllers
             toSend.priority = "High";
             toSend.classification = "Classification";
             toSend.assigneeId = "186361000000070005";
-            toSend.phone = "079 774 6267";
+            toSend.phone = "072 760 7234";
             toSend.category = "Category";
             toSend.email = "arad18@student.monash.edu";
             toSend.status = "Open";
@@ -119,9 +115,15 @@ namespace APITest.Controllers
             var postResponse = client.Execute<Ticket>(postRequest);
             Ticket t = postResponse.Data;
 
+
+            System.Diagnostics.Debug.WriteLine("REST Response: " + postResponse.ResponseStatus);
+            System.Diagnostics.Debug.WriteLine("HTTP Response: " + postResponse.StatusCode);
+
             var stringResponse = "ID: " + t.id + "\n" + "Contact ID: " + t.contactId + "\n" + "Ticket Number: " + t.ticketNumber + "\n" + "Subject: " + t.subject + "\n" + "Description: " + t.description + "\n" + "Email: " + t.email + "\n" + "Priority: " + t.priority + "\n" + "Channel: " + t.channel + "\n" + "Status: " + t.status;
             return Content(stringResponse, "application/json");
             #endregion
+
+
         }
     }
 }
