@@ -41,7 +41,7 @@ namespace ZohoTest.Models
 
     public class ticketManager
     { 
-        public ticketManager()
+        public string ticketControl()
         { 
         var client = new RestClient("https://desk.zoho.com");
 
@@ -75,7 +75,7 @@ namespace ZohoTest.Models
         Ticket t = postResponse.Data;
 
         var stringResponse = "ID: " + t.id + "\n" + "Contact ID: " + t.contactId + "\n" + "Ticket Number: " + t.ticketNumber + "\n" + "Subject: " + t.subject + "\n" + "Description: " + t.description + "\n" + "Email: " + t.email + "\n" + "Priority: " + t.priority + "\n" + "Channel: " + t.channel + "\n" + "Status: " + t.status;
-            return Content(stringResponse, "application/json");
+        return stringResponse;
         }
     }  
 }
