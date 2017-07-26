@@ -1,9 +1,41 @@
 ﻿@model ZohoTest.Models.Ticket
 
+    @{
+        ViewBag.Title = "TicketCreator";
+    }
 
-@{
-    ViewBag.Title = "TicketCreator";
-}
 
-<input type="button" id="PostTicket" value="POST A TICKET!" onclick="location.href='@Url.Action("PostTicket", "Ticket")'" />
+<html>
+<head>
+
+</head>
+
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <p> Subject: @Html.TextBoxFor(m => Model.subject) </p>
+            <p> Due Date: @Html.TextBoxFor(m => Model.dueDate) </p>
+            <p> Phone: @Html.TextBoxFor(m => Model.phone) </p>
+
+
+
+
+            <input type="button" id="PostTicket" value="POST A TICKET!" onclick="location.href='@Url.Action("PostTicket", "Ticket")'" />
+        }
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+   
+
+
+
+   
+
 
