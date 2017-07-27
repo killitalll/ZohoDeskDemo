@@ -13,28 +13,21 @@
 
 <body>
     <div>
-        @using (Html.BeginForm())
-        {
+        <form action="PostTicket" method="get">
+
             //Subject
             <label>Subject:</label>
-            <input type="text" name="Subject" placeholder="Subject"/>
-
-            //Due Date
-            <label>Due Date:</label>
-            <input type="text" name="DueDate" placeholder="Due Date" />
-
-            //Phone
-            <label>Phone:</label>
-            <input type="text" name="Phone" placeholder="Phone" />
+            <input type="text" name="Subject" placeholder="Subject" />
+            <br />
 
             //E-Mail
             <label>E-Mail:</label>
             <input type="text" name="email" placeholder="E-Mail" />
+            <br />
 
 
-
-            <input type="button" id="PostTicket" value="Post" onclick="location.href='@Url.Action("PostTicket", "Ticket")'" />
-        }
+            <input type="submit" id="PostTicket" value="Post" onclick="location.href='@Url.Action("PostTicket", "Ticket")'" />
+        </form>
     </div>
 </body>
 

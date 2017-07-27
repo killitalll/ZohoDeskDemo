@@ -18,13 +18,18 @@ namespace ZohoTest.Controllers
 
         public ActionResult TicketCreator()
         {
+
             return View();
         }
         
 
         
-        public ActionResult PostTicket()
+        public ActionResult PostTicket(String Subject, String email)
         {
+            Ticket info = new Ticket();
+            info.subject = Subject;
+            info.email = email;
+
             var createTicket = new ticketManager();
             var ticket = createTicket.ticketControl();
             return Content(ticket, "application/json");
