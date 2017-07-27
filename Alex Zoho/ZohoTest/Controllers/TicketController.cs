@@ -20,12 +20,15 @@ namespace ZohoTest.Controllers
         {
             return View();
         }
+        
 
+        
         public ActionResult PostTicket()
         {
             var createTicket = new ticketManager();
             var ticket = createTicket.ticketControl();
             return Content(ticket, "application/json");
+            
         }
     }
 }

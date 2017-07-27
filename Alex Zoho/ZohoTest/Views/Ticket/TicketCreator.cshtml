@@ -1,5 +1,6 @@
 ﻿@model ZohoTest.Models.Ticket
 
+
     @{
         ViewBag.Title = "TicketCreator";
     }
@@ -14,14 +15,25 @@
     <div>
         @using (Html.BeginForm())
         {
-            <p> Subject: @Html.TextBoxFor(m => Model.subject) </p>
-            <p> Due Date: @Html.TextBoxFor(m => Model.dueDate) </p>
-            <p> Phone: @Html.TextBoxFor(m => Model.phone) </p>
+            //Subject
+            <label>Subject:</label>
+            <input type="text" name="Subject" placeholder="Subject"/>
+
+            //Due Date
+            <label>Due Date:</label>
+            <input type="text" name="DueDate" placeholder="Due Date" />
+
+            //Phone
+            <label>Phone:</label>
+            <input type="text" name="Phone" placeholder="Phone" />
+
+            //E-Mail
+            <label>E-Mail:</label>
+            <input type="text" name="email" placeholder="E-Mail" />
 
 
 
-
-            <input type="button" id="PostTicket" value="POST A TICKET!" onclick="location.href='@Url.Action("PostTicket", "Ticket")'" />
+            <input type="button" id="PostTicket" value="Post" onclick="location.href='@Url.Action("PostTicket", "Ticket")'" />
         }
     </div>
 </body>
