@@ -1,0 +1,8 @@
+﻿@model APITest.Models.Ticket
+
+@{
+    ViewBag.Title = "TicketCreator";
+}
+
+<input type="button" id="PostTicket" value="Post" onclick="location.href='@Url.Action("PostTicket", "Ticket")'" />
+

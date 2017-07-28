@@ -1,0 +1,46 @@
+﻿@model ZohoTest.Models.Ticket
+
+
+    @{
+        ViewBag.Title = "TicketCreator";
+    }
+
+
+<html>
+<head>
+
+</head>
+
+<body>
+    <div>
+        <form action="PostTicket" method="get">
+
+            //Subject
+            <label>Subject:</label>
+            <input type="text" name="Subject" placeholder="Subject" />
+            <br />
+
+            //E-Mail
+            <label>E-Mail:</label>
+            <input type="text" name="email" placeholder="E-Mail" />
+            <br />
+
+
+            <input type="submit" id="PostTicket" value="Post" onclick="location.href='@Url.Action("PostTicket", "Ticket")'" />
+        </form>
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+   
+
+
+
+   
+
+
