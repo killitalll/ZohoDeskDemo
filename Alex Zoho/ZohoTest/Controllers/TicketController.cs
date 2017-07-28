@@ -26,9 +26,9 @@ namespace ZohoTest.Controllers
         
         public ActionResult PostTicket(String Subject, String email)
         {
-            Ticket info = new Ticket();
-            info.subject = Subject;
-            info.email = email;
+            ticketManager info = new ticketManager();
+            info.Subject = Subject;
+            info.Email = email;
 
             var createTicket = new ticketManager();
             var ticket = createTicket.ticketControl();
